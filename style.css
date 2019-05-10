@@ -16,6 +16,10 @@ body {
 }
 
 #canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 4px solid black;
 }
 
@@ -29,13 +33,13 @@ body {
     overflow-x: hidden;
     overflow-Y: hidden;
 
-    /* background: url('bg.png');
-    background-size: cover; */
+    font-size: 10%;
 }
 
 #startScreen::after {
     content: "";
     background: url('bg.png');
+    background-size: cover;
     opacity: 0.2;
     top: 0;
     left: 0;
@@ -45,24 +49,38 @@ body {
     z-index: -1;
   }
 
-#startScreen img {
+#bird {
     position: absolute;
     bottom: 0;
     left: 0;
     transform: rotateZ(-30deg) translate(-20%, -2%);
 
+    height: 80%;
+    user-select: none;
+}
+
+#phone {
+    position: absolute;
+    bottom: 20px;
+    right: 10%;
+
+    height: 80%;
+
     user-select: none;
 }
 
 @media (max-width: 900px) {
-    #startScreen img {
+    #phone {
+        display: none;
+    }
+    #bird {
         transform: rotateZ(-30deg) translate(-40%, -10%);
     }
 }
 
 #startScreen h1 {
     position: absolute;
-    top: 300px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
 
@@ -81,20 +99,18 @@ body {
 #gameOwerScreen h1,
 #gameOwerScreen p {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 100px);
     left: 50%;
     
     padding: 5px;
-
-    /* background-color: #fff; */
 }
 
 #gameOwerScreen h1 {
-    transform: translate(-50%, -400%);
+    transform: translate(-50%, 0);
 }
 
 #gameOwerScreen p {
-    transform: translate(-50%, -450%);
+    transform: translate(-50%, 40px);
 }
 
 #gameOwerScreen *::selection,
@@ -105,13 +121,13 @@ body {
 
 #startButton {
     position: absolute;
-    top: 300px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, 0);
 
     border: none;
     color: #000;
-    font-size: 40px;
+    font-size: 300%;
     background-color: #b83a4f;
 }
 
