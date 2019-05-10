@@ -128,7 +128,7 @@ class Bird {
         ctx.drawImage(img, x - s2, y - s2, SIZE, SIZE);
         ctx.restore();
 
-        ctx.fillText(`Score: ${Math.floor(this.score)}`, 10, 10);
+        ctx.fillText(`Score スコア: ${Math.floor(this.score)}`, 10, 10);
     }
 
     isCollidingColumns(columns: Columns): boolean {

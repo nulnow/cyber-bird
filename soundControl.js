@@ -8,14 +8,14 @@ if (playPromise !== undefined) {
         // Automatic playback started!
         // Show playing UI.
         sound.volume = 0.05;
-        muter.innerText = 'MUTE';
+        muter.innerText = 'MUTE 音を消す';
         muter.addEventListener('click', function() {
             if (sound.paused) {
                 sound.play();
-                muter.innerText = 'MUTE';
+                muter.innerText = 'MUTE 音を消す';
             } else {
                 sound.pause();
-                muter.innerText = 'PLAY MUSIC';
+                muter.innerText = 'PLAY MUSIC 音楽を再生';
             }
         });
     })

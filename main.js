@@ -111,7 +111,7 @@ var Bird = /** @class */ (function () {
         ctx.translate(-x, -y);
         ctx.drawImage(img, x - s2, y - s2, SIZE, SIZE);
         ctx.restore();
-        ctx.fillText("Score: " + Math.floor(this.score), 10, 10);
+        ctx.fillText("Score \u30B9\u30B3\u30A2: " + Math.floor(this.score), 10, 10);
     };
     Bird.prototype.isCollidingColumns = function (columns) {
         var topColumn = columns.topColumn, bottomColumn = columns.bottomColumn;
