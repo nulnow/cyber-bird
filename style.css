@@ -131,6 +131,7 @@ body {
     background-color: rgba(0,0,0,0);
 
     z-index: 9;
+    user-select: none;
 }
 
 #muter:focus {
