@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+body {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+
+    background-color: black;
+}
+
+#canvas {
+    border: 4px solid black;
+}
+
+#startScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-Y: hidden;
+
+    /* background: url('bg.png');
+    background-size: cover; */
+}
+
+#startScreen::after {
+    content: "";
+    background: url('bg.png');
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+#startScreen img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotateZ(-30deg) translate(-20%, -2%);
+
+    user-select: none;
+}
+
+@media (max-width: 900px) {
+    #startScreen img {
+        transform: rotateZ(-30deg) translate(-40%, -10%);
+    }
+}
+
+#startScreen h1 {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+
+    font-size: 70px;
+    text-align: center;
+}
+
+#gameOwerScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#gameOwerScreen h1,
+#gameOwerScreen p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    padding: 5px;
+
+    /* background-color: #fff; */
+}
+
+#gameOwerScreen h1 {
+    transform: translate(-50%, -400%);
+}
+
+#gameOwerScreen p {
+    transform: translate(-50%, -450%);
+}
+
+#gameOwerScreen *::selection,
+#startScreen *::selection,
+#startButton::selection {
+    background-color: pink;
+}
+
+#startButton {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    border: none;
+    color: #000;
+    font-size: 40px;
+    background-color: #b83a4f;
+}
+
+#startButton:focus {
+    outline: 4px solid black;
+}

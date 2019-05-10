@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cyber Bird</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/bird.png" />
+</head>
+<body>
+    <div id="startScreen">
+        <img id="bird" src="bird.png" alt="bird" ondragstart="return false">
+        <h1>Cyber Bird</h1>
+    </div>
+    <canvas id="canvas" height="600" width="320" style="display: none"></canvas>
+    <div id="gameOwerScreen" style="display: none">
+        <h1>Game ower</h1>
+        <p>Score: <span id="score"></span></p>
+    </div>
+    <button id="startButton">START</button>
+    <script src="main.js"></script>
+</body>
+</html>
