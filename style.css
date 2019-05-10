@@ -118,3 +118,21 @@ body {
 #startButton:focus {
     outline: 4px solid black;
 }
+
+#muter {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border: none;
+
+    color: gray;
+    background-color: rgba(0,0,0,0);
+
+    z-index: 9;
+}
+
+#muter:focus {
+    outline: 4px solid black;
+}

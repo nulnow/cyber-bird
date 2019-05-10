@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="/bird.png" />
 </head>
 <body>
+    <button id="muter"></button>
     <div id="startScreen">
         <img id="bird" src="bird.png" alt="bird" ondragstart="return false">
         <h1>Cyber Bird</h1>
@@ -19,6 +20,8 @@
         <p>Score: <span id="score"></span></p>
     </div>
     <button id="startButton">START</button>
+    <audio id="sound" src="sound.mp3" preload="none"></audio>
+    <script src="soundControl.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
