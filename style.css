@@ -76,6 +76,10 @@ body {
     #bird {
         transform: rotateZ(-30deg) translate(-40%, -10%);
     }
+    
+    * {
+        user-select: none;
+    }
 }
 
 #startScreen h1 {
