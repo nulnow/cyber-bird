@@ -9,6 +9,37 @@ let HEIGHT: number = canvas.height;
 let WIDTH: number = canvas.width;
 const birdImg: HTMLImageElement = new Image();
 
+class LocalStorageProvider {
+    static set(key: string, value: any) {
+        localStorage[key] = JSON.stringify(value);
+    }
+    static get(key: string): any {
+        return localStorage[key] && JSON.parse(localStorage[key]);
+    }
+}
+
+class ScoreProvider {
+    static addScore(score: number) {
+        if (!localStorage.scores) {
+            localStorage.scores = []
+        }
+        localStorage.scores.push(score);
+    }
+    static getScores(): Array<number> {
+        if (!localStorage.scores) {
+            localStorage.scores = [];
+        }
+        localStorage.scores.sort();
+        return localStorage.scores;
+    }
+    static getBest3(): Array<number> {
+        if (!localStorage.scores) return [];
+        localStorage.scores.sort();
+        localStorage.scores.reverse();
+        return localStorage.scores.slice(0,3);
+    }
+}
+
 class Interface {
     static showStartScreen() {
         canvas.style.display = 'none';
@@ -17,6 +48,7 @@ class Interface {
         startButton.style.display = 'block';
     }
     static showGameOwerScreen(score: number) {
+        const best3 = ScoreProvider.getBest3();
         scoreElement.innerHTML = Math.floor(score).toString();
         canvas.style.filter = 'blur(20px)';
         gameOwerScreen.style.display = 'block';
@@ -238,6 +270,7 @@ class Game {
     gameOwer(score: number) {
         clearInterval(this.gameLoop);
         this.removeEventListeners();
+        ScoreProvider.addScore(score);
         Interface.showGameOwerScreen(score);
     }
 
